@@ -1,0 +1,19 @@
+name: Rust
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build
+      run: |
+        cd leap-years
+        cargo build --verbose
+    - name: Run tests
+      run: |
+        cd leap-years
+        cargo test --verbose
